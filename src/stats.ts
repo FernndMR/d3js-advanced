@@ -5,7 +5,7 @@ export interface StatsEntry {
 
 export const base_stats: StatsEntry[] = [
   {
-    name: "Madrid",
+    name: "Comunidad de Madrid",
     value: 587
   },
   {
@@ -21,11 +21,11 @@ export const base_stats: StatsEntry[] = [
     value: 101
   },
   {
-    name: "Valencia",
+    name: "Comunidad Valenciana",
     value: 50
   },
   {
-    name: "Murcia",
+    name: "Región de Murcia",
     value: 5
   },
   {
@@ -33,7 +33,7 @@ export const base_stats: StatsEntry[] = [
     value: 7
   },
   {
-    name: "Castilla La Mancha",
+    name: "Castilla-La Mancha",
     value: 26
   },
   {
@@ -45,7 +45,7 @@ export const base_stats: StatsEntry[] = [
     value: 12
   },
   {
-    name: "Asturias",
+    name: "Principado de Asturias",
     value: 10
   },
   {
@@ -69,94 +69,78 @@ export const base_stats: StatsEntry[] = [
     value: 11
   },
   {
-    name: "Navarra",
+    name: "Comunidad Foral de Navarra",
     value: 13
-  },
-  {
-    name: "Ceuta",
-    value: 5
-  },
-  {
-    name: "Melilla",
-    value: 5
   }
 ];
 
 export const nowadays_stats: StatsEntry[] = [
   {
-    name: "Madrid",
-    value: 10575
+    name: "Comunidad de Madrid",
+    value: 40469
   },
   {
     name: "La Rioja",
-    value: 747
+    value: 2846
   },
   {
     name: "Andalucía",
-    value: 1961
+    value: 8767
   },
   {
     name: "Cataluña",
-    value: 7864
+    value: 28323
   },
   {
-    name: "Valencia",
-    value: 1901
+    name: "Comunidad Valenciana",
+    value: 7443
   },
   {
-    name: "Murcia",
-    value: 385
+    name: "Región de Murcia",
+    value: 1283
   },
   {
     name: "Extremadura",
-    value: 493
+    value: 2116
   },
   {
-    name: "Castilla La Mancha",
-    value: 2078
+    name: "Castilla-La Mancha",
+    value: 11077
   },
   {
     name: "País Vasco",
-    value: 2421
+    value: 9021
   },
   {
     name: "Cantabria",
-    value: 347
+    value: 1501
   },
   {
-    name: "Asturias",
-    value: 594
+    name: "Principado de Asturias",
+    value: 1679
   },
   {
     name: "Galicia",
-    value: 1208
+    value: 6331
   },
   {
     name: "Aragón",
-    value: 638
+    value: 3449
   },
   {
     name: "Castilla y León",
-    value: 2055
+    value: 9581
   },
   {
     name: "Islas Canarias",
-    value: 481
+    value: 1725
   },
   {
     name: "Islas Baleares",
-    value: 400
+    value: 1369
   },
   {
-    name: "Navarra",
-    value: 886
-  },
-  {
-    name: "Ceuta",
-    value: 15
-  },
-  {
-    name: "Melilla",
-    value: 15
+    name: "Comunidad Foral de Navarra",
+    value: 3355
   }
 ];

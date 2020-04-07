@@ -24,50 +24,37 @@ const aProjection = d3Composite
   .scale(3300)
   .translate([500, 400]);
 
-
 const geoPath = d3.geoPath().projection(aProjection);
 const geojson = topojson.feature(spainjson, spainjson.objects.ESP_adm1);
 
-
-
-svg
-  .selectAll("path")
-  .data(geojson["features"])
-  .enter()
-  .append("path")
-  .attr("class", "country")
-  .attr("d", geoPath as any);
-
-
 // Buttons 
-
 document
   .getElementById("initial")
   .addEventListener("click", function handleBaseResults() {
     updateCases(base_stats);
-    updateBackground(base_stats);
   });
 
 document
   .getElementById("current")
   .addEventListener("click", function handleCurrentResults() {
     updateCases(nowadays_stats);
-    u(nowadays_stats);
   });  
 
-
+// Color Scale
 var color = d3
   .scaleThreshold<number, string>()
-  .domain([0, 10, 50, 200, 500, 1000])
+  .domain([5, 50, 500, 1000, 2500, 5000,10000])
   .range([
-    "#FFE8E5",
-    "#F88F70",
-    "#CD6A4E",
-    "#A4472D",
-    "#7B240E",
-    "#540000"
+    "#e3f3e7",
+    "#c6e7cf",
+    "#a9dbb8",
+    "#8ccfa1",
+    "#6dc38b",
+    "#49b675",
+    "#3f9561"
   ]);
-  
+
+
 const updateCases = (data: StatsEntry[]) => {
 
   const maxAffected = data.reduce(
@@ -75,31 +62,40 @@ const updateCases = (data: StatsEntry[]) => {
     0
   );
  
-const updateBackground = (data: StatsEntry[]) => {
-   const assignCountryBackgroundColor = (community: string) => {
-     const item = data.find(
-        item => item.name === community
-      );
+  const assignBackgroundColor = (name: string) => {
+    const item = data.find(
+        item => item.name === name
+    );
     if (item) {
       console.log(item.value);
     }
     return item ? color(item.value) : color(0);
-  };
-  
+  };  
+
+  svg
+    .selectAll("path")
+    .data(geojson["features"])
+    .enter()
+    .append("path")
+    .attr("class", "country")
+    .attr("fill", d => assignBackgroundColor(d["properties"]["NAME_1"]))
+    .attr("d", geoPath as any)
+    .merge(svg.selectAll("path") as any)
+    .transition()
+    .duration(500)
+    .attr("fill", d => assignBackgroundColor(d["properties"]["NAME_1"]));
+
   const affectedRadiusScale = d3
     .scaleLinear()
     .domain([0, maxAffected])
     .clamp(true)
     .range([5, 45]);
   
-  
-  const calculateRadiusBasedOnAffectedCases = (comunidad: string) => {  
-    const entry = data.find(item => item.name === comunidad);
+  const calculateRadiusBasedOnAffectedCases = (comunity: string) => {  
+    const entry = data.find(item => item.name === comunity);
   
     return entry ? affectedRadiusScale(entry.value) : 0;
-  
   };
-
 
   const circles = svg.selectAll("circle");
 
@@ -120,6 +116,6 @@ const updateBackground = (data: StatsEntry[]) => {
     .attr("r", function(d) {
       return calculateRadiusBasedOnAffectedCases(d.name);
     });
-  };
+};
 
 updateCases(base_stats);
