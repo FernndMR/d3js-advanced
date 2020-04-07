@@ -3,7 +3,7 @@
 
 In this task we want to add to our chart a background color as an indicator of the number of cases in every region also. 
 
-We still want to have our buttons to change visualitazation between two dates.
+We still want to have our buttons to change visualization between two dates.
 
 ![Alt text](./content/MapaAnimado.gif "affected coronavirus")
 
@@ -77,4 +77,4 @@ _./src/index.ts_
     .duration(500)
     .attr("fill", d => assignBackgroundColor(d["properties"]["NAME_1"]));
   ```
- ---
+ ## Enjoy it!
