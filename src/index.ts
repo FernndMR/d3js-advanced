@@ -43,15 +43,17 @@ document
 // Color Scale
 var color = d3
   .scaleThreshold<number, string>()
-  .domain([5, 50, 500, 1000, 2500, 5000,10000])
+  .domain([5, 50, 100, 1000, 2500, 5000, 10000, 20000, 40000])
   .range([
-    "#e3f3e7",
-    "#c6e7cf",
-    "#a9dbb8",
-    "#8ccfa1",
-    "#6dc38b",
-    "#49b675",
-    "#3f9561"
+    "#DEE4E4",
+    "#C2C4C4",
+    "#A7B0B3",
+    "#929AA5",
+    "#858394",
+    "#7F6C7D",
+    "#77555F",
+    "#713D4C",
+    "#564147"
   ]);
 
 
