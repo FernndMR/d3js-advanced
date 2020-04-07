@@ -9,7 +9,7 @@ We still want to have our buttons to change visualization between two dates.
 
 Our departure point is the code we performance in the mandatory task (https://github.com/FernndMR/d3js-mandatory.git), based on the code of Lemoncode (https://github.com/Lemoncode/d3js-typescript-examples/tree/master/02-maps/02-pin-location-scale).
 
-# Steps
+## Steps
 
 - Clone the project from: https://github.com/FernndMR/d3js-mandatory.git
 - Execute
@@ -77,4 +77,4 @@ _./src/index.ts_
     .duration(500)
     .attr("fill", d => assignBackgroundColor(d["properties"]["NAME_1"]));
   ```
- ## Enjoy it!
+ **Enjoy it!**
