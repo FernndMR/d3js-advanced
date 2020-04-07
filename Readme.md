@@ -3,7 +3,7 @@
 Our boss liked a lot the map we have developed, now he wants to focus on Spain affection by City, he wants to
 display a map pinning affected locations and scaling that pin according the number of cases affected, something like:
 
-![map affected coronavirus](./content/Mapa Animado.gif "affected coronavirus")
+![Alt text](./content/Mapa Animado.gif "affected coronavirus")
 
 codesandbox: https://codesandbox.io/s/hopeful-ellis-rlczx
 
